@@ -1,0 +1,113 @@
+.sidebar-profile-pic img{
+
+    border-radius: 90px;
+    margin-top: 10px;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    vertical-align: middle;
+    margin: 0 auto;
+    object-fit: cover;
+    border: 3px solid gray;
+
+}
+
+.navbar-items ul{
+    padding-left: 20px;
+}
+
+.navbar-items ul li{
+    list-style-type: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #dddddd;
+    font-size: 12px;
+    font-weight: 600;
+    height: 34px;
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 34px;
+}
+
+.navbar-items ul li.small-height{
+    line-height: 25px;
+    height: 25px;   
+}
+.navbar-items-only-icons ul{
+    padding-left: 0px;
+}
+
+.navbar-items-only-icons ul li.small-height {
+    color: #dddddd;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.navbar-items ul li svg{
+    margin-right: 25px;
+    margin-left: 10px;
+}
+
+.navbar-items-only-icons ul li {
+    margin-top: 10px;
+    cursor: pointer;
+    list-style-type: none;
+    text-align: center;
+}
+
+.navbar-items ul li a{
+    text-decoration: none;
+}
+
+.nav-item .active{
+    border-left: 2px solid yellow;
+    color: yellow;
+}
+
+.sidebar-icon{
+    background: url('../../Assets/Images/menu-items/menu-items-white-sprite-retina.png') no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 10px;
+    background-size: 16px;
+}
+
+.sidebar-icon.dashboard-icon{
+    background-position: 0 -71px;
+}
+
+.sidebar-icon.posts-icon{
+    background-position: 0 -219px;
+}
+
+.sidebar-icon.galleries-icon{
+    background-position: 0 -137px;
+}
+
+.sidebar-icon.instagram-icon{
+    background-position: 0 -153px;
+}
+
+.sidebar-icon.facebook-icon{
+    background-position: 0 -104px;
+}
+
+.sidebar-icon.twitter-icon{
+    background-position: 0 -285px;
+}
+
+.sidebar-icon.create-icon{
+    background-position: 0 -54px;
+}
+
+.sidebar-icon.products-icon{
+    background-position: 0 -235px;
+}
+
+.sidebar-icon.settings-icon{
+    background-position: 0 -269px;
+}
+
+

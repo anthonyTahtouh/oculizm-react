@@ -1,0 +1,48 @@
+.admin-bar{
+  background-color: #171717;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.admin-bar button {
+ background: none;
+ color: white;
+ color: #ccc;
+ font-family: "Open Sans", Arial, sans-serif;
+ border: none;
+}
+
+.admin-bar ul {
+ float: right;
+ margin: 10px 10px 0 0;
+}
+
+.admin-bar li {
+ display: inline-block;
+ margin: 11px 0 0 15px;
+ font-size: 13px;
+}
+
+.admin-bar li a {
+ color: #ccc;
+}
+
+.oculizm-logo{
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 20px;
+  background: url('../../Assets/Images/oculizm-logo-white.png') no-repeat;
+  background-size: 100px;
+  border: none;
+}
+
+@media (max-width:767px) {
+ .admin-bar {
+  height: 120px;
+ }
+}
