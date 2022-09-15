@@ -57,6 +57,17 @@
 
 .navbar-items ul li a{
     text-decoration: none;
+    color: #dddddd;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+.navbar-items-only-icons ul li a{
+    text-decoration: none;
+    color: #dddddd;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Open Sans", Arial, sans-serif;
 }
 
 .nav-item .active{

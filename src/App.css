@@ -27,6 +27,14 @@
 .App-link {
   color: #61dafb;
 }
+.pageContainer{
+  margin-top: 60px;
+  position: relative;
+  padding-left: 105px;
+}
+.pageContainer.pageContainer-expand{
+  padding-left: 240px;
+}
 
 @keyframes App-logo-spin {
   from {
