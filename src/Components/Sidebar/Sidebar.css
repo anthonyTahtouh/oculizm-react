@@ -19,10 +19,9 @@
 
 .icon-for-sidebar-expand-and-collapse{
 
-    display: flex;
-    align-items: right;
-    justify-content: right;
     cursor: pointer;
+    position: absolute;
+    right: 0;
 }
 
 .icon-for-sidebar-expand-and-collapse p svg{
