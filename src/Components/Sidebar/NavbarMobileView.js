@@ -3,8 +3,9 @@ import "./NavbarMobileView.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {Link} from "react-router-dom";
 
-const NavbarMobileView = () => {
+const NavbarMobileView = (props) => {
   const [open, setOpen] = useState(false);
+  props.onCollapseMobile(open);
 
   const handleClick = () => {
     setOpen(!open);

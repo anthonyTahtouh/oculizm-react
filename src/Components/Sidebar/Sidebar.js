@@ -5,7 +5,7 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import SidebarList from "./SidebarList";
 
 const Sidebar = (props) => {
-  const [expandSidebar, setExpandSidebar] = useState(true);
+  const [expandSidebar, setExpandSidebar] = useState(false);
   props.onCollapse(expandSidebar);
   const handleExpandClick = () => {
     setExpandSidebar(!expandSidebar);

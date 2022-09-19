@@ -19,19 +19,39 @@ import Support from "./Pages/Support/Support";
 const App = () => {
 
   const [expandSidebar, setExpandSidebar] = useState(false);
-  
+  const [open, setOnCollapseMobiler] = useState(false);
   return (
     
       <div>
         <AdminBar/>
         <Router>
-          <NavbarMobileView/>
+          <NavbarMobileView
+          onCollapseMobile={(open) => {
+            setTimeout(() => setOnCollapseMobiler(open), 0);
+          }}
+          />
           <Sidebar
           onCollapse={(expandSidebar) => {
             setTimeout(() => setExpandSidebar(expandSidebar), 0);
           }}
           />
           <div className={expandSidebar ? "pageContainer pageContainer-expand":"pageContainer"}>
+            <Routes>
+              <Route path='/' exact element={<Dashboard/>}/>
+              <Route path='/posts' element={<Posts/>}/>
+              <Route path='/galleries' element={<Galleries/>}/>
+              <Route path='/instagram' element={<Instagram/>}/>
+              <Route path='/facebook' element={<Facebook/>}/>
+              <Route path='/twitter' element={<Twitter/>}/>
+              <Route path='/create' element={<Create/>}/>
+              <Route path='/products' element={<Products/>}/>
+              <Route path='/settings' element={<Settings/>}/>
+              <Route path='/account' element={<Account/>}/>
+              <Route path='/support' element={<Support/>}/>
+            </Routes>
+          </div>
+
+          <div className={open ? "pageContainer-mobile pageContainer-expand-mobile":"pageContainer-mobile"}>
             <Routes>
               <Route path='/' exact element={<Dashboard/>}/>
               <Route path='/posts' element={<Posts/>}/>

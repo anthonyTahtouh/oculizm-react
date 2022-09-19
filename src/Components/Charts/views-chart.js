@@ -4,39 +4,32 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const data = [
   {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
+    date: '19 Aug',
+    views: 0,
   },
   {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
+    date: '20 Aug',
+    views: 173,
   },
   {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
+    date: '21 Aug',
+    views: 219,
   },
   {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
+    date: '22 Aug',
+    views: 172,
   },
   {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
+    date: '23 Aug',
+    views: 176,
   },
   {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
+    date: '24 Aug',
+    views: 155,
   },
   {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
+    date: '25 Aug',
+    views: 162,
   },
 ];
 
@@ -53,14 +46,14 @@ const viewsChart = () => {
       left: 20,
       bottom: 5,
     }}
+    fontSize={10}
   >
     <CartesianGrid strokeDasharray="3 3" />
-    <XAxis dataKey="name" />
+    <XAxis dataKey="date" />
     <YAxis />
     <Tooltip />
     <Legend />
-    <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+    <Line type="monotone" dataKey="views" stroke="#82ca9d" strokeWidth={3} r={3} />
   </LineChart>
 </ResponsiveContainer>
   </div>

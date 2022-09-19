@@ -1,9 +1,9 @@
 .App {
   text-align: center;
 }
-/* body{
+body{
   background-color: #eeeeee;
-} */
+}
 
 .App-logo {
   height: 40vmin;
@@ -31,12 +31,36 @@
   color: #61dafb;
 }
 .pageContainer{
-  margin-top: 60px;
+  margin-top: 81px;
   position: relative;
-  padding-left: 105px;
+  padding-left: 117px;
+  padding-right: 20px;
 }
 .pageContainer.pageContainer-expand{
-  padding-left: 240px;
+  padding-left: 251px;
+  padding-right: 20px;
+}
+
+.pageContainer-mobile.pageContainer-expand-mobile{
+  padding-left: 0px;
+  display: none;
+}
+
+.pageContainer-mobile{
+  margin-top: 0;
+  padding-left: 0;
+  margin-top: 0;
+  display: none;
+}
+
+.dashboard-content-block{
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 25px;
+  margin-bottom: 25px;
+  max-width: 1600px;
+  width: 100%; 
+  display: block;
 }
 
 @keyframes App-logo-spin {
@@ -49,7 +73,27 @@
 }
 
 @media (max-width: 767px){
-  .pageContainer {
-    margin-top: 225px;
+  .pageContainer{
+    display: none;
+    padding-left: 0px;
+    margin-top: 0;
   }
+  .pageContainer.pageContainer-expand{
+    display: none;
+    padding-left: 0px;
+  }
+  .pageContainer-mobile.pageContainer-expand-mobile{
+    padding-left: 231px;
+    display: block;
+  }
+
+  .pageContainer-mobile{
+    margin-top: 60px;
+    position: relative;
+    padding-left: 20px;
+    margin-top: 233px;
+    display: block;
+    padding-right: 20px;
+  }
+
 }

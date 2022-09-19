@@ -1,0 +1,29 @@
+.section-title{
+ font-size: 22px;
+ line-height: 32px; 
+ font-weight: normal;
+ background-size: 32px;
+ background-position: left center;
+}
+
+.section-title span{
+  background: url('../../Assets/Images/menu-items/dashboard-menu-items-black-retina.png') no-repeat;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 10px;
+  background-size: 32px;
+}
+.section-title span.views-title{
+ background-position: 0 -291px;
+}
+
+.section-description{
+ font-size: 18px;
+ margin-bottom: 32px;
+ color: #666666;
+}

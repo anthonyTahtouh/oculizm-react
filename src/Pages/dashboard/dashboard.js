@@ -8,11 +8,18 @@ const dashboard = () => {
 
   return (
     <div>
-      <h1>Recharts Views chart</h1>
-      <ViewsChart/>
+      <div className="dashboard-content-block">
+        <h2 className="section-title">
+          <span className="views-title"></span>
+          Views</h2>
+        <div class="section-description">
+            Showing the total number of visits to the Shoppable Gallery and Product Page Gallery.
+          </div>
+        <ViewsChart/>
+      </div>
 
-      <h1>Google Views chart</h1>
-      <GoogleViewsChart/>
+      {/* <h1>Google Views chart</h1>
+      <GoogleViewsChart/> */}
     </div>
   
   );
