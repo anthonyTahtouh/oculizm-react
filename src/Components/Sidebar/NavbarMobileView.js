@@ -1,14 +1,17 @@
+//Basic imports 
 import React, { useState } from "react";
 import "./NavbarMobileView.css";
+
+//Packages import
 import { GiHamburgerMenu } from "react-icons/gi";
 import {Link} from "react-router-dom";
 
 const NavbarMobileView = (props) => {
-  const [open, setOpen] = useState(false);
-  props.onCollapseMobile(open);
+  const [expandMobileNav, setExpandMobileNav] = useState(false);
+  props.onCollapseMobile(expandMobileNav);
 
   const handleClick = () => {
-    setOpen(!open);
+    setExpandMobileNav(!expandMobileNav);
   };
 
   return (
@@ -19,7 +22,7 @@ const NavbarMobileView = (props) => {
         </p>
       </div>
 
-      {open ? (
+      {expandMobileNav ? (
         <div className="mobile-nav">
           <ul>
             <li className="nav-item">

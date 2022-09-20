@@ -13,18 +13,18 @@
 
 }
 
-.sidebar-expand {
+.sidebar-expanded {
     width: 230px;
 }
 
-.icon-for-sidebar-expand-and-collapse{
+.icon-for-sidebar-expanded-and-collapsed{
 
     cursor: pointer;
     position: absolute;
     right: 0;
 }
 
-.icon-for-sidebar-expand-and-collapse p svg{
+.icon-for-sidebar-expanded-and-collapsed p svg{
 
     background-color: #414141;
     padding: 5px;

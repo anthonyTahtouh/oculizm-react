@@ -1,8 +1,12 @@
+//Basic imports 
 import React, { useState } from "react";
 import "./Sidebar.css";
 
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+//Components import
 import SidebarList from "./SidebarList";
+
+//Packages import
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const Sidebar = (props) => {
   const [expandSidebar, setExpandSidebar] = useState(false);
@@ -13,9 +17,9 @@ const Sidebar = (props) => {
 
   return (
     <div className="container-fluid sidebar-section">
-      <div className={expandSidebar ? "sidebar-expand sidebar":"sidebar"}>
+      <div className={expandSidebar ? "sidebar-expanded sidebar":"sidebar"}>
 
-        <div className="icon-for-sidebar-expand-and-collapse">
+        <div className="icon-for-sidebar-expanded-and-collapsed">
           <p onClick={handleExpandClick}>
 
             {expandSidebar ? (

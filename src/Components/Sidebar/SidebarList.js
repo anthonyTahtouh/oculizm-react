@@ -1,5 +1,8 @@
+//Basic imports 
 import React from "react";
 import "./SidebarList.css";
+
+//Packages import
 import {Link} from "react-router-dom";
 
 const SidebarList = ({ expandSidebar }) => {

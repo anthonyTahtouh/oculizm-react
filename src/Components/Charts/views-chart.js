@@ -1,5 +1,8 @@
+//Basic imports 
 import React from "react";
 import "./views-chart.css";
+
+//Packages import
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 // viewsChart data 
@@ -38,7 +41,7 @@ const viewsChart = () => {
 
  return (
   <div className="chart-section-container">
- <ResponsiveContainer width="100%" >
+ <ResponsiveContainer width="100%" height="100%" >
   <LineChart
     data={data}
     margin={{

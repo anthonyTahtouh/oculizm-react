@@ -1,7 +1,9 @@
+//Basic imports 
 import React from "react";
 import "./dashboard.css";
+
+//Components import
 import ViewsChart from "../../Components/Charts/views-chart";
-import GoogleViewsChart from "../../Components/Charts/google-view-charts";
 
 
 const dashboard = () => {
@@ -12,14 +14,11 @@ const dashboard = () => {
         <h2 className="section-title">
           <span className="views-title"></span>
           Views</h2>
-        <div class="section-description">
+        <div className="section-description">
             Showing the total number of visits to the Shoppable Gallery and Product Page Gallery.
           </div>
         <ViewsChart/>
       </div>
-
-      {/* <h1>Google Views chart</h1>
-      <GoogleViewsChart/> */}
     </div>
   
   );
