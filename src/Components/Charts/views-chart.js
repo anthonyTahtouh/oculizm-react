@@ -2,6 +2,7 @@ import React from "react";
 import "./views-chart.css";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+// viewsChart data 
 const data = [
   {
     date: '19 Aug',

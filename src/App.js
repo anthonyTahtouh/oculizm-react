@@ -1,3 +1,4 @@
+//To manage states. Returns a stateful value and an updater function to update it.
 import React , { useState } from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import AdminBar from "./Components/Top-menu/Top-menu";
@@ -16,26 +17,34 @@ import Settings from "./Pages/Settings/Settings";
 import Account from "./Pages/Account/account";
 import Support from "./Pages/Support/Support";
 
+// creatining app function component
 const App = () => {
 
+  // Declare a new state variable to use in react hooks 
   const [expandSidebar, setExpandSidebar] = useState(false);
   const [open, setOnCollapseMobiler] = useState(false);
   return (
     
       <div>
+        {/*using AdminBar component  */}
         <AdminBar/>
         <Router>
+          {/*using NavbarMobileView component and pulling open nav bar data from the component */}
           <NavbarMobileView
           onCollapseMobile={(open) => {
             setTimeout(() => setOnCollapseMobiler(open), 0);
           }}
           />
+          {/*using Sidebar component and pulling expandSidebar data from the component */}
           <Sidebar
           onCollapse={(expandSidebar) => {
             setTimeout(() => setExpandSidebar(expandSidebar), 0);
           }}
           />
+          {/* desktop page container */}
           <div className={expandSidebar ? "pageContainer pageContainer-expand":"pageContainer"}>
+            {/* A <Routes> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
             <Routes>
               <Route path='/' exact element={<Dashboard/>}/>
               <Route path='/posts' element={<Posts/>}/>
@@ -50,7 +59,7 @@ const App = () => {
               <Route path='/support' element={<Support/>}/>
             </Routes>
           </div>
-
+            {/* mobile page container */}
           <div className={open ? "pageContainer-mobile pageContainer-expand-mobile":"pageContainer-mobile"}>
             <Routes>
               <Route path='/' exact element={<Dashboard/>}/>
