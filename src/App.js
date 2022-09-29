@@ -5,6 +5,7 @@ import "./App.css";
 //Components import
 import Sidebar from "./Components/Sidebar/Sidebar";
 import AdminBar from "./Components/Top-menu/Top-menu";
+import AccountBar from "./Components/Account-Bar/account-bar";
 import NavbarMobileView from "./Components/Sidebar/NavbarMobileView";
 import Dashboard from "./Pages/dashboard/dashboard";
 import Posts from "./Pages/posts/posts";
@@ -32,6 +33,7 @@ const App = () => {
       <div>
         {/*using AdminBar component  */}
         <AdminBar/>
+        <AccountBar/>
         <Router>
           {/*using NavbarMobileView component and pulling open nav bar data from the component */}
           <NavbarMobileView

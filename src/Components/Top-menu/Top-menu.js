@@ -31,7 +31,7 @@ const AdminBar = () => {
                 <button>Logs</button>
             </li>
         </ul>
-        <button className="oculizm-logo" ></button>
+        {/* <button className="oculizm-logo" ></button> */}
       </div>
     </div>
   );

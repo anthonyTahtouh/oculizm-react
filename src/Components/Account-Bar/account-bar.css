@@ -1,0 +1,31 @@
+.account-bar{
+ background-color: #414141;
+ height: 60px;
+ position: fixed;
+ width: 100%;
+ z-index: 2;
+ top: 60px;
+}
+
+.oculizm-logo{
+ display: block;
+ position: absolute;
+ top: 20px;
+ left: 20px;
+ width: 100px;
+ height: 20px;
+ background: url('../../Assets/Images/oculizm-logo-white.png') no-repeat;
+ background-size: 100px;
+ border: none;
+}
+.account-dropdown{
+ float: right;
+ margin-top: 9px;
+margin-right: 5px;
+}
+
+@media (max-width:767px) {
+ .account-bar {
+  top: 120px;
+ }
+}

@@ -29,17 +29,6 @@
  color: #ccc;
 }
 
-.oculizm-logo{
-  display: block;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 100px;
-  height: 20px;
-  background: url('../../Assets/Images/oculizm-logo-white.png') no-repeat;
-  background-size: 100px;
-  border: none;
-}
 
 @media (max-width:767px) {
  .admin-bar {
