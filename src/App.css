@@ -1,9 +1,10 @@
 .App {
   text-align: center;
 }
-body{
+
+/* body {
   background-color: #eeeeee;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -31,7 +32,7 @@ body{
   color: #61dafb;
 }
 .pageContainer{
-  margin-top: 81px;
+  margin-top: 140px;
   position: relative;
   padding-left: 117px;
   padding-right: 20px;

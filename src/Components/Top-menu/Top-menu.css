@@ -1,4 +1,4 @@
-.admin-bar{
+.admin-bar {
   background-color: #171717;
   height: 60px;
   position: fixed;
@@ -7,31 +7,58 @@
 }
 
 .admin-bar button {
- background: none;
- color: white;
- color: #ccc;
- font-family: "Open Sans", Arial, sans-serif;
- border: none;
+  background: none;
+  color: white;
+  color: #ccc;
+  font-family: "Open Sans", Arial, sans-serif;
+  border: none;
+}
+
+.admin-bar .dropdown button {
+  float: right;
+  margin: 10px 10px 0 0;
+  width: 200px;
+  cursor: pointer;
+  border: 1px solid #333333;
+  background: #000000;
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 10px;
+  height: 40px;
+  text-align: left;
+}
+
+.dropdown-menu.show {
+  background-color: #000000 ;
+  color: #ffffff ;
+  /* min-width: 200px !important; */
+}
+
+.dropdown-menu.show a.dropdown-item {
+  color: #ffffff ;
+}
+.dropdown-menu.show a.dropdown-item:hover {
+  background-color: #323232 !important;
 }
 
 .admin-bar ul {
- float: right;
- margin: 10px 10px 0 0;
+  float: right;
+  margin: 10px 10px 0 0;
 }
 
 .admin-bar li {
- display: inline-block;
- margin: 11px 0 0 15px;
- font-size: 13px;
+  display: inline-block;
+  margin: 11px 0 0 15px;
+  font-size: 13px;
 }
 
 .admin-bar li a {
- color: #ccc;
+  color: #ccc;
 }
 
 
 @media (max-width:767px) {
- .admin-bar {
-  height: 120px;
- }
+  .admin-bar {
+    height: 120px;
+  }
 }
