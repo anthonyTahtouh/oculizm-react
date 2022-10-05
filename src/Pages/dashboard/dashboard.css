@@ -1,12 +1,12 @@
-.section-title{
- font-size: 22px;
- line-height: 32px; 
- font-weight: normal;
- background-size: 32px;
- background-position: left center;
+.section-title {
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: normal;
+  background-size: 32px;
+  background-position: left center;
 }
 
-.section-title span{
+.section-title span {
   background: url('../../Assets/Images/menu-items/dashboard-menu-items-black-retina.png') no-repeat;
   background-position-x: 0%;
   background-position-y: 0%;
@@ -18,12 +18,62 @@
   margin-right: 10px;
   background-size: 32px;
 }
-.section-title span.views-title{
- background-position: 0 -291px;
+
+.section-title span.views-title {
+  background-position: 0 -291px;
 }
 
-.section-description{
- font-size: 18px;
- margin-bottom: 32px;
- color: #666666;
+.section-description {
+  font-size: 18px;
+  margin-bottom: 32px;
+  color: #666666;
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row.display-flex>[class*='col-'] {
+  flex-grow: 1;
+}
+
+.row.display-flex .col-with-bottom-pad {
+  padding-bottom: 25px;
+}
+
+.dashboard-data-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.social-media-circle {
+  width: 12px;
+  height: 12px;
+  background: #eeeeee;
+  border-radius: 50%;
+}
+
+.social-media-circle.active {
+  background: #11aa44;
+}
+
+.dashboard-info-sections {
+  background-color: #ffffff;
+  padding: 25px;
+  height: 100%;
+  position: relative;
+  padding-bottom: 70px;
+}
+
+.dashboard-link {
+  display: inline-block;
+  position: absolute;
+  bottom: 25px;
+  color: #000000 !important;
+  cursor: pointer;
+  text-decoration: underline;
 }

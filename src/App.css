@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-/* body {
-  background-color: #eeeeee;
-} */
+body {
+  font-family: "Open Sans", Arial, sans-serif !important;
+}
 
 .App-logo {
   height: 40vmin;
@@ -31,68 +31,97 @@
 .App-link {
   color: #61dafb;
 }
-.pageContainer{
+
+.pageContainer {
   margin-top: 140px;
   position: relative;
   padding-left: 117px;
   padding-right: 20px;
 }
-.pageContainer.pageContainer-expand{
+
+.pageContainer.pageContainer-expand {
   padding-left: 251px;
   padding-right: 20px;
 }
 
-.pageContainer-mobile.pageContainer-expand-mobile{
+.pageContainer-mobile.pageContainer-expand-mobile {
   padding-left: 0px;
   display: none;
 }
 
-.pageContainer-mobile{
+.pageContainer-mobile {
   margin-top: 0;
   padding-left: 0;
   margin-top: 0;
   display: none;
 }
 
-.dashboard-content-block{
+.dashboard-content-block {
   background-color: #ffffff;
   box-sizing: border-box;
   padding: 25px;
   margin-bottom: 25px;
   max-width: 1600px;
-  width: 100%; 
+  width: 100%;
   display: block;
+}
+
+.dashboard-content-text {
+  font-size: 14px;
+  padding: 0;
+}
+
+.page-title {
+  margin: 10px 0 25px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+.mt-15 {
+  margin-top: 15px !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.font-weight-bold{
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-@media (max-width: 767px){
-  .pageContainer{
+@media (max-width: 767px) {
+  .pageContainer {
     display: none;
     padding-left: 0px;
     margin-top: 0;
   }
-  .pageContainer.pageContainer-expand{
+
+  .pageContainer.pageContainer-expand {
     display: none;
     padding-left: 0px;
   }
-  .pageContainer-mobile.pageContainer-expand-mobile{
+
+  .pageContainer-mobile.pageContainer-expand-mobile {
     padding-left: 231px;
     display: block;
   }
 
-  .pageContainer-mobile{
-    margin-top: 60px;
+  .pageContainer-mobile {
     position: relative;
     padding-left: 20px;
-    margin-top: 233px;
+    margin-top: 281px;
     display: block;
     padding-right: 20px;
   }
