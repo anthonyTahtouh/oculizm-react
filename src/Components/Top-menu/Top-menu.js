@@ -43,7 +43,7 @@ const AdminBar = () => {
                     onSelect={handleSelect}
                 >
                     {clientlist.map(clientlist => (
-                        <Dropdown.Item eventKey={clientlist.name}>{clientlist.name}</Dropdown.Item>
+                        <Dropdown.Item key={clientlist.id} eventKey={clientlist.name}>{clientlist.name}</Dropdown.Item>
                     ))}
 
                 </DropdownButton>

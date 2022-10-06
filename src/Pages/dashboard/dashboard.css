@@ -23,6 +23,21 @@
   background-position: 0 -291px;
 }
 
+.section-title span.interactions-title {
+  background-position: 0 -97px;
+}
+
+.section-title span.orders-title {
+  background: url('../../Assets/Images/menu-items/orders-logo.png') no-repeat;
+  background-size: 38px;
+}
+
+.section-title span.revenue-title {
+  background: url('../../Assets/Images/menu-items/revenue-icon.png') no-repeat;
+  background-size: 32px;
+}
+
+
 .section-description {
   font-size: 18px;
   margin-bottom: 32px;
