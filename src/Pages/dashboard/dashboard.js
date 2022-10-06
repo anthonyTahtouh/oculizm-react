@@ -198,27 +198,115 @@ const revenueChartdata = [
   },
   {
     date: '20 Aug',
-    GBP: 50,
+    GBP: 100,
   },
   {
     date: '21 Aug',
-    GBP: 29,
+    GBP: 900,
   },
   {
     date: '22 Aug',
-    GBP: 272,
+    GBP: 250,
   },
   {
     date: '23 Aug',
-    GBP: 276,
+    GBP: 600,
   },
   {
     date: '24 Aug',
-    GBP: 55,
+    GBP: 500,
   },
   {
     date: '25 Aug',
-    GBP: 62,
+    GBP: 620,
+  },
+  {
+    date: '26 Aug',
+    GBP: 150,
+  },
+  {
+    date: '27 Aug',
+    GBP: 180,
+  },
+  {
+    date: '28 Aug',
+    GBP: 280,
+  },
+  {
+    date: '29 Aug',
+    GBP: 210,
+  },
+  {
+    date: '30 Aug',
+    GBP: 259,
+  },
+  {
+    date: '31 Aug',
+    GBP: 167,
+  },
+  {
+    date: '01 Sep',
+    GBP: 615,
+  },
+  {
+    date: '02 Sep',
+    GBP: 800,
+  },
+  {
+    date: '03 Sep',
+    GBP: 901,
+  },
+  {
+    date: '04 Sep',
+    GBP: 111,
+  },
+  {
+    date: '05 Sep',
+    GBP: 158,
+  },
+  {
+    date: '06 Sep',
+    GBP: 182,
+  },
+  {
+    date: '07 Sep',
+    GBP: 110,
+  },
+  {
+    date: '08 Sep',
+    GBP: 140,
+  },
+  {
+    date: '09 Sep',
+    GBP: 156,
+  },
+  {
+    date: '10 Sep',
+    GBP: 522,
+  },
+  {
+    date: '11 Sep',
+    GBP: 801,
+  },
+  {
+    date: '12 Sep',
+    GBP: 319,
+  },
+  {
+    date: '13 Sep',
+    GBP: 414,
+  },
+  {
+    date: '14 Sep',
+    GBP: 510,
+  },
+  {
+    date: '15 Sep',
+    GBP: 311,
+  },
+  {
+    date: '16 Sep',
+    GBP: 212,
   },
 ];
 
