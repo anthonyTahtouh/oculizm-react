@@ -47,6 +47,7 @@ const chart = ({ data, chartName, chartType }) => {
                     left: 20,
                     bottom: 5,
                   }}
+                  fontSize={10}
                 >
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="date" />

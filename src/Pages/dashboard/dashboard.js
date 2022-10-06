@@ -100,6 +100,94 @@ const ordersChartdata = [
     date: '25 Aug',
     orders: 6,
   },
+  {
+    date: '26 Aug',
+    orders: 15,
+  },
+  {
+    date: '27 Aug',
+    orders: 18,
+  },
+  {
+    date: '28 Aug',
+    orders: 2,
+  },
+  {
+    date: '29 Aug',
+    orders: 21,
+  },
+  {
+    date: '30 Aug',
+    orders: 25,
+  },
+  {
+    date: '31 Aug',
+    orders: 16,
+  },
+  {
+    date: '01 Sep',
+    orders: 6,
+  },
+  {
+    date: '02 Sep',
+    orders: 8,
+  },
+  {
+    date: '03 Sep',
+    orders: 9,
+  },
+  {
+    date: '04 Sep',
+    orders: 11,
+  },
+  {
+    date: '05 Sep',
+    orders: 15,
+  },
+  {
+    date: '06 Sep',
+    orders: 18,
+  },
+  {
+    date: '07 Sep',
+    orders: 11,
+  },
+  {
+    date: '08 Sep',
+    orders: 14,
+  },
+  {
+    date: '09 Sep',
+    orders: 16,
+  },
+  {
+    date: '10 Sep',
+    orders: 2,
+  },
+  {
+    date: '11 Sep',
+    orders: 8,
+  },
+  {
+    date: '12 Sep',
+    orders: 19,
+  },
+  {
+    date: '13 Sep',
+    orders: 14,
+  },
+  {
+    date: '14 Sep',
+    orders: 10,
+  },
+  {
+    date: '15 Sep',
+    orders: 11,
+  },
+  {
+    date: '16 Sep',
+    orders: 12,
+  },
 ];
 
 // Revenue data 
