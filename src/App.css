@@ -64,6 +64,7 @@ body {
   max-width: 1600px;
   width: 100%;
   display: block;
+  float: left;
 }
 
 .dashboard-content-text {
@@ -87,7 +88,7 @@ body {
   margin-bottom: 0 !important;
 }
 
-.font-weight-bold{
+.font-weight-bold {
   font-weight: bold;
 }
 

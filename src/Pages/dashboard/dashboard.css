@@ -37,6 +37,22 @@
   background-size: 32px;
 }
 
+.section-title span.top-products-title {
+  background-position: 0 -196px;
+}
+
+.section-title span.top-posts-title {
+  background-position: 0 -163px;
+}
+
+.section-title span.top-creators-title {
+  background-position: 0 0;
+}
+
+.section-title span.top-hashtags-title {
+  background-position: 0 -33px;
+  height: 31px;
+}
 
 .section-description {
   font-size: 18px;
@@ -91,4 +107,88 @@
   color: #000000 !important;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.dashboard-content-block .post {
+  height: 100%;
+}
+
+.dashboard-content-block .post a {
+  text-decoration: none;
+}
+
+.dashboard-content-block .img-thumbnail,
+.dashboard-content-block .rounded-circle {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard-content-block .post-image {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.dashboard-content-block .post-image .absolute-text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0;
+}
+
+.dashboard-content-block .post-image .absolute-text-container .big-title {
+  margin-top: calc(50% - 54px);
+  margin-bottom: 0px;
+  color: white;
+  font-size: 4vw;
+  filter: drop-shadow(0 0 0.75rem black);
+  font-weight: 600;
+}
+
+.dashboard-content-block .post-image .absolute-text-container .small-title {
+  margin: 0px;
+  color: white;
+  margin-top: -9px;
+  font-size: 1.7vw;
+  filter: drop-shadow(0 0 0.75rem black);
+  font-weight: 600;
+}
+
+.dashboard-content-block .top-products {
+  padding-top: 8px;
+  color: #000000;
+  font-size: 14px;
+}
+
+.dashboard-content-block .creator-username {
+  color: #000000;
+  margin: 10px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  padding: 5px;
+}
+
+.dashboard-content-block .hashtag {
+  float: left;
+  background-color: #78777c;
+  margin-right: 13px;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.dashboard-content-block .hashtag a {
+  color: white;
+  text-decoration: none;
 }
