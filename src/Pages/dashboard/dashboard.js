@@ -1,10 +1,18 @@
 //Basic imports 
-import React from "react";
+import React, { useState } from "react";
 import "./dashboard.css";
 
-//Components import
+//Components imports
 import Chart from "../../Components/Charts/chart";
 import ReactCountryFlag from "react-country-flag";
+
+//Packages imports
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // viewsChart data 
 const viewsChartdata = [
@@ -357,22 +365,22 @@ const topPostsdata = [
 // Top Creators data 
 const topCreatorsdata = [
   {
-    src: 'https://scontent-fra5-2.xx.fbcdn.net/v/t51.2885-15/280506364_727147425136938_5768818910996507535_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=86c713&_nc_ohc=PJOKFW6NQTQAX-XIvwH&_nc_ht=scontent-fra5-2.xx&edm=AL-3X8kEAAAA&oh=00_AT88qMPzSgPp_ULkFsAbNTlB4TsPt9PfeNbRqhw0fRSfsw&oe=63431B33',
+    src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t51.2885-15/280506364_727147425136938_5768818910996507535_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=86c713&_nc_eui2=AeHHPVP-5HmOmO9rXRgYl-RDPkXvNKD5nxY-Re80oPmfFm2P2Rn8TDFaSk4h0CU5AwA&_nc_ohc=L_OXOeqVi8oAX_6cKZ7&_nc_ht=scontent-lhr8-1.xx&edm=AL-3X8kEAAAA&oh=00_AT9RM1rq1RWBDGIodHgr9i9xH2J0QekfQKjNWUqLlh1gpg&oe=634EF8B3',
     username: 'our_wandsworth_home',
     postsNumber: 7,
   },
   {
-    src: 'https://scontent-fra5-2.xx.fbcdn.net/v/t51.2885-15/117724828_175109090804414_6497226056344732760_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=86c713&_nc_ohc=Bp6THzKgTdIAX_IePO7&_nc_ht=scontent-fra5-2.xx&edm=AL-3X8kEAAAA&oh=00_AT_LNa-9whgaDSygbPKi38pWFHTeCESG_7WwueUgcPrAew&oe=6343674B',
+    src: 'https://scontent-lhr8-2.xx.fbcdn.net/v/t51.2885-15/117724828_175109090804414_6497226056344732760_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=86c713&_nc_eui2=AeEZlSwNk058MSYMlfQ6_IoSnNp3JVZMJnSc2nclVkwmdPX77KQtDNKTid4cxE16Uq0&_nc_ohc=uz_LfBOYdo4AX8M3Pdy&_nc_ht=scontent-lhr8-2.xx&edm=AL-3X8kEAAAA&oh=00_AT-1D3jNGUiAbRn7Omnz8C_3RxTf1qJVvVda4QdClyUUCg&oe=634F44CB',
     username: 'thedoctorscottage',
     postsNumber: 7,
   },
   {
-    src: 'https://scontent-fra5-2.xx.fbcdn.net/v/t51.2885-15/271516719_724322918533809_6996943226430624394_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=86c713&_nc_ohc=RmswNU6QY2wAX84KhKL&_nc_ht=scontent-fra5-2.xx&edm=AL-3X8kEAAAA&oh=00_AT-ZzQe3c3hgN4V_Z4UvRXMy1EkwhOXM2AT3OOMiA7yKHA&oe=634440B9',
+    src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t51.2885-15/271516719_724322918533809_6996943226430624394_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=86c713&_nc_eui2=AeGuYkG3M-9yygOZO2DNZPCaKNtbApuDUYAo21sCm4NRgBc8UNTfRqXom_yHMpftS08&_nc_ohc=gkrBT8CYQTYAX_e0-Fn&_nc_ht=scontent-lhr8-1.xx&edm=AL-3X8kEAAAA&oh=00_AT8f3ArmXOns31qkJVol7_G3mOg3AcA90ps2cQHQ9wSiFQ&oe=63501E39',
     username: 'athomewithharlow',
     postsNumber: 6,
   },
   {
-    src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t51.2885-15/297235308_148332434486114_7847064112985141909_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=86c713&_nc_ohc=DUfG4Yok1IkAX9ywa2l&_nc_ht=scontent-lhr8-1.xx&edm=AL-3X8kEAAAA&oh=00_AT8MKXTk20FX4VKgT2Tyd_Ai5dmhUdcB4apw5VunnQxLXA&oe=634260ED',
+    src: 'https://scontent-cdg2-1.xx.fbcdn.net/v/t51.2885-15/297235308_148332434486114_7847064112985141909_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=86c713&_nc_eui2=AeE63W2tydgkgi5J2bdKkQn4QsocJY7E0dpCyhwljsTR2q0paLdIk1MTPhy-pU1HAQA&_nc_ohc=h7E6A25AfdsAX8Tphgh&_nc_ht=scontent-cdg2-1.xx&edm=AL-3X8kEAAAA&oh=00_AT_H29SQLQDYTZrQ3GouM9SgJML6a8v07fmQMzWvxbpIiQ&oe=635232ED',
     username: 'emmaandthegirls_',
     postsNumber: 5,
   },
@@ -445,7 +453,81 @@ const topHashtagdata = [
     hashtagOccNumber: 27,
   },
 ];
+
+// order details data
+const orderDetailsdata = [
+  {
+  "id": 1,
+  "date": "18 Oct",
+  "order_id": "4962328838397",
+  "order_total": "£82.00",
+  "order_items": "6x4 Oak Floating Shelf (14x9cm)"
+},
+{
+  "id": 2,
+  "date": "18 Oct",
+  "order_id": "4962320449789",
+  "order_total": "£50.00",
+  "order_items": "4x4 Rustic Mantel Beam (10x10cm)"
+},
+{
+  "id": 3,
+  "date": "17 Oct",
+  "order_id": "4961961476349",
+  "order_total": "£3.00",
+  "order_items": "Oak Shelves & Mantels - Wax Finish Samples"
+},
+{
+  "id": 4,
+  "date": "17 Oct",
+  "order_id": "4962003222781",
+  "order_total": "£102.00",
+  "order_items": "Apothecary Black Bottle - Small"
+},
+{
+  "id": 5,
+  "date": "16 Oct",
+  "order_id": "4960900448509",
+  "order_total": "£199.00",
+  "order_items": "9x1.5 Smooth Floating Shelf (22x3.5cm)"
+},
+{
+  "id": 6,
+  "date": "16 Oct",
+  "order_id": "4960868729085",
+  "order_total": "£116.00",
+  "order_items": "9x2 Smooth Floating Shelf (22x4.5cm)"
+},
+];
+
 const dashboard = () => {
+
+  // State variable to keep track of all the expanded rows
+  // By default, nothing expanded. Hence initialized with empty array.
+  const [expandedRows, setExpandedRows] = useState([]);
+
+  // State variable to keep track which row is currently expanded.
+  const [expandState, setExpandState] = useState({});
+
+  /**
+   * This function gets called when show/hide link is clicked.
+   */
+  const handleEpandRow = (event, orderId) => {
+    const currentExpandedRows = expandedRows;
+    const isRowExpanded = currentExpandedRows.includes(orderId);
+
+    let obj = {};
+    isRowExpanded ? (obj[orderId] = false) : (obj[orderId] = true);
+    setExpandState(obj);
+
+    // If the row is expanded, we are here to hide it. Hence remove
+    // it from the state variable. Otherwise add to it.
+    const newExpandedRows = isRowExpanded ?
+      currentExpandedRows.filter(id => id !== orderId) :
+      currentExpandedRows.concat(orderId);
+
+    setExpandedRows(newExpandedRows);
+  }
 
   return (
     <div>
@@ -728,6 +810,106 @@ const dashboard = () => {
                 <a target="_blank" href="/"> #{topHashtagdata.hashtag} ({topHashtagdata.hashtagOccNumber})</a>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-xxl-12">
+          <div className="dashboard-content-block">
+            <h2 className="section-title">
+              <span className="order-details-title"></span>
+              Full Order Details</h2>
+            <div className="section-description">
+              Showing all orders where the journey was influenced by user generated content (UGC).
+            </div>
+            <Container>
+              <Row>
+                <Col>
+                  <h1 style={{ fontSize: '1.5rem', color: 'black'}}> Orders({orderDetailsdata.length})</h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col sm={12}>
+                  <Table responsive striped bordered hover size="sm">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Order ID</th>
+                        <th>Order Total</th>
+                        <th>Items</th>
+                        <th>Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {
+                        orderDetailsdata.map((order) =>
+                          <>
+                            <tr key={order.id}>
+                              <td>
+                              {order['id']}
+                              </td>
+                              <td>
+                                {order['date']}
+                              </td>
+                              <td>
+                                {order['order_id']}
+                              </td>
+                              <td>
+                                {order['order_total']}
+                              </td>
+                              <td>
+                                {order['order_items']}
+                              </td>
+                              <td>
+                                <Button
+                                  variant="link"
+                                  onClick={event => handleEpandRow(event, order.id)}>
+                                  {
+                                    expandState[order.id] ?
+                                      'Hide' : 'Show'
+                                  }
+                                </Button>
+                              </td>
+                            </tr>
+                            <>
+                              {
+                                expandedRows.includes(order.id) ?
+                                  <tr>
+                                    <td colspan="6">
+                                      <div style={{ backgroundColor: '#414141;', color: 'black', padding: '10px' }}>
+                                        <h2> Order Details </h2>
+                                        <ul>
+                                          <li>
+                                            <span><b>order:</b></span> {' '}
+                                            <span> {order['order_id']} {' '} {order['date']} </span>
+                                          </li>
+                                          <li>
+                                            <span><b>items:</b></span> {' '}
+                                            <span> {order.order_items} </span>
+                                          </li>
+                                          <li>
+                                            <span><b>Total:</b></span> {' '}
+                                            <span> {order.order_total} </span>
+                                          </li>
+                                          <li>
+                                            <span><b>Date:</b></span> {' '}
+                                            <span> {order['date']} </span>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </td>
+                                  </tr> : null
+                              }
+                            </>
+                          </>
+                        )}
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
+            </Container>
           </div>
         </div>
       </div>

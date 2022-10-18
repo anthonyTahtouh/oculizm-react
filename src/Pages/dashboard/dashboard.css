@@ -54,6 +54,11 @@
   height: 31px;
 }
 
+.section-title span.order-details-title {
+  background: url('../../Assets/Images/menu-items/orders-logo.png') no-repeat;
+  background-size: 38px;
+}
+
 .section-description {
   font-size: 18px;
   margin-bottom: 32px;
@@ -191,4 +196,11 @@
 .dashboard-content-block .hashtag a {
   color: white;
   text-decoration: none;
+}
+
+.dashboard-content-block .table-striped>tbody>tr>td button {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 13px;
+  margin-top: -6px;
 }
