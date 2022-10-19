@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 import "./Top-menu.css";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,29 +8,21 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 const AdminBar = () => {
 
-    const clientlist = [
-        {
-            name: "Acumen Collection (83953)",
-            id: "83953",
-        },
-        {
-            name: "Alaabi (77974)",
-            id: "77974",
-        },
-        {
-            name: "Apatchy (57345)",
-            id: "57345",
-        },
-        {
-            name: "Dr Watson CBD (53283)",
-            id: "53283",
-        },
-    ];
+    const [clients, setClients] = useState([]);
+    const [value, setValue] = useState('');
 
-    const [value, setValue] = useState('Acumen Collection (83953)');
+    useEffect(() => {
+        fetch("https://app.oculizm.com/wp-admin/admin-ajax.php?action=get_all_clients")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setClients(result);
+                    setValue(result[0].name + "(" + result[0].id + ")");
+                }
+            )
+    }, [])
 
     const handleSelect = (e) => {
-        console.log(e);
         setValue(e)
     }
 
@@ -42,8 +34,8 @@ const AdminBar = () => {
                     id="dropdown-menu-align-right"
                     onSelect={handleSelect}
                 >
-                    {clientlist.map(clientlist => (
-                        <Dropdown.Item key={clientlist.id} eventKey={clientlist.name}>{clientlist.name}</Dropdown.Item>
+                    {clients.map(clientlist => (
+                        <Dropdown.Item key={clientlist.id} eventKey={clientlist.name + "(" + clientlist.id + ")" }>{clientlist.name} ({clientlist.id})</Dropdown.Item>
                     ))}
 
                 </DropdownButton>
