@@ -3,7 +3,10 @@ import "./Top-menu.css";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from 'react-bootstrap/Dropdown';
+
+//services imports
+import {getAllClients} from '../../services/clientService';
 
 
 const AdminBar = () => {
@@ -12,14 +15,20 @@ const AdminBar = () => {
     const [value, setValue] = useState('');
 
     useEffect(() => {
-        fetch("https://app.oculizm.com/wp-admin/admin-ajax.php?action=get_all_clients")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setClients(result);
-                    setValue(result[0].name + "(" + result[0].id + ")");
-                }
-            )
+        getAllClients().then(
+            (result) => {
+                setClients(result);
+                setValue(result[0].name + "(" + result[0].id + ")");
+            }
+        )
+        // fetch("https://app.oculizm.com/wp-admin/admin-ajax.php?action=get_all_clients")
+        //     .then(res => res.json())
+        //     .then(
+        //         (result) => {
+        //             setClients(result);
+        //             setValue(result[0].name + "(" + result[0].id + ")");
+        //         }
+        //     )
     }, [])
 
     const handleSelect = (e) => {
