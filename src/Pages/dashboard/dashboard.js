@@ -564,7 +564,7 @@ const dashboard = () => {
       </div>
       <div className="row">
         <div className="col-xxl-12">
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">Next Steps</h2>
             <p className="dashboard-content-text">You're doing great. Keep curating!</p>
           </div>
@@ -671,7 +671,7 @@ const dashboard = () => {
 
       <div className="row">
         <div className="col-xxl-12">
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="views-title"></span>
               Views</h2>
@@ -681,7 +681,7 @@ const dashboard = () => {
             <Chart data={viewsChartdata} chartName="views" chartType="lineChart" />
           </div>
 
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="interactions-title"></span>
               Interactions</h2>
@@ -691,7 +691,7 @@ const dashboard = () => {
             <Chart data={interactionsChartdata} chartName="interactions" chartType="lineChart" />
           </div>
 
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="orders-title"></span>
               Orders</h2>
@@ -701,7 +701,7 @@ const dashboard = () => {
             <Chart data={ordersChartdata} chartName="orders" chartType="barChart" />
           </div>
 
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="revenue-title"></span>
               Revenue</h2>
@@ -715,7 +715,7 @@ const dashboard = () => {
 
       <div className="row">
         <div className="col-xxl-12">
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="top-products-title"></span>
               Top Products</h2>
@@ -752,7 +752,7 @@ const dashboard = () => {
 
       <div className="row">
         <div className="col-xxl-12">
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="top-posts-title"></span>
               Top Posts</h2>
@@ -786,7 +786,7 @@ const dashboard = () => {
 
       <div className="row">
         <div className="col-xxl-12">
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="top-creators-title"></span>
               Top Content Creators</h2>
@@ -823,7 +823,7 @@ const dashboard = () => {
 
       <div className="row">
         <div className="col-xxl-12">
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="top-hashtags-title"></span>
               Top Hashtags</h2>
@@ -841,7 +841,7 @@ const dashboard = () => {
 
       <div className="row">
         <div className="col-xxl-12">
-          <div className="dashboard-content-block">
+          <div className="white-content-block">
             <h2 className="section-title">
               <span className="order-details-title"></span>
               Full Order Details</h2>

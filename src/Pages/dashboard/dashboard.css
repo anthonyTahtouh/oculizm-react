@@ -114,16 +114,16 @@
   text-decoration: underline;
 }
 
-.dashboard-content-block .post {
+.white-content-block .post {
   height: 100%;
 }
 
-.dashboard-content-block .post a {
+.white-content-block .post a {
   text-decoration: none;
 }
 
-.dashboard-content-block .img-thumbnail,
-.dashboard-content-block .rounded-circle {
+.white-content-block .img-thumbnail,
+.white-content-block .rounded-circle {
   padding: 0;
   border: none;
   border-radius: 0;
@@ -131,12 +131,12 @@
   width: 100%;
 }
 
-.dashboard-content-block .post-image {
+.white-content-block .post-image {
   position: relative;
   aspect-ratio: 1 / 1;
 }
 
-.dashboard-content-block .post-image .absolute-text-container {
+.white-content-block .post-image .absolute-text-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -147,7 +147,7 @@
   font-size: 0;
 }
 
-.dashboard-content-block .post-image .absolute-text-container .big-title {
+.white-content-block .post-image .absolute-text-container .big-title {
   margin-top: calc(50% - 54px);
   margin-bottom: 0px;
   color: white;
@@ -156,7 +156,7 @@
   font-weight: 600;
 }
 
-.dashboard-content-block .post-image .absolute-text-container .small-title {
+.white-content-block .post-image .absolute-text-container .small-title {
   margin: 0px;
   color: white;
   margin-top: -9px;
@@ -165,13 +165,13 @@
   font-weight: 600;
 }
 
-.dashboard-content-block .top-products {
+.white-content-block .top-products {
   padding-top: 8px;
   color: #000000;
   font-size: 14px;
 }
 
-.dashboard-content-block .creator-username {
+.white-content-block .creator-username {
   color: #000000;
   margin: 10px 0 0 0;
   white-space: nowrap;
@@ -184,7 +184,7 @@
   padding: 5px;
 }
 
-.dashboard-content-block .hashtag {
+.white-content-block .hashtag {
   float: left;
   background-color: #78777c;
   margin-right: 13px;
@@ -193,12 +193,12 @@
   border-radius: 5px;
 }
 
-.dashboard-content-block .hashtag a {
+.white-content-block .hashtag a {
   color: white;
   text-decoration: none;
 }
 
-.dashboard-content-block .table-striped>tbody>tr>td button {
+.white-content-block .table-striped>tbody>tr>td button {
   padding-top: 0;
   padding-bottom: 0;
   font-size: 13px;
