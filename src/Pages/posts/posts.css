@@ -203,3 +203,19 @@
 .actions-overlay .close::after {
  transform: rotate(-45deg);
 }
+.post-max-width{
+ max-width: 25%;
+}
+
+
+@media (max-width: 992px) {
+ .post-max-width{
+  max-width: 33.3%;
+ }
+}
+
+@media (max-width: 768px) {
+ .post-max-width{
+  max-width: 100%;
+}
+}
