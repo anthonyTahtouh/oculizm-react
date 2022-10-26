@@ -1,0 +1,13 @@
+.post-meta {
+ font-size: 12px;
+ padding: 5px;
+}
+
+.post-meta-item {
+ display: block;
+}
+
+.post-meta-item .post-meta-label,
+.post-meta-item .post-meta-value {
+ display: inline-block;
+}

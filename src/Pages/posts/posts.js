@@ -4,9 +4,9 @@ import "./posts.css";
 
 //Packages imports
 import Pagination from '../../Components/Pagination/pagination';
-import renderHTML from 'react-render-html';
+import RenderHTML from 'react-render-html';
 import ReactLoading from 'react-loading';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //services imports
 import { getClientPosts } from '../../services/postsService';
@@ -97,12 +97,15 @@ const posts = () => {
                             </div>
                             <div className="actions-overlay">
                               <a href="/posts" className="push-to-top"> </a>
-                              <a href={"https://app.oculizm.com/edit-post/?post_id=" + post.post_id} className="edit" target='_blank' rel='noopener noreferrer'> </a>
-                              <Link to="/edit-post" className="edit"></Link>
+                              <Link
+                                to={"/edit-post"}
+                                state={{ post_id: post.post_id }}
+                                className="edit">
+                              </Link>
                               <a href="/posts" className="close"> </a>
                             </div>
                             <div className="gallery-post-title">
-                              <p>{renderHTML(post.post_title)}</p>
+                              <p>{RenderHTML(post.post_title)}</p>
                             </div>
                           </div>
                         </a>
