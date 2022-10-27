@@ -21,14 +21,6 @@ const AdminBar = () => {
                 setValue(result[0].name + "(" + result[0].id + ")");
             }
         )
-        // fetch("https://app.oculizm.com/wp-admin/admin-ajax.php?action=get_all_clients")
-        //     .then(res => res.json())
-        //     .then(
-        //         (result) => {
-        //             setClients(result);
-        //             setValue(result[0].name + "(" + result[0].id + ")");
-        //         }
-        //     )
     }, [])
 
     const handleSelect = (e) => {

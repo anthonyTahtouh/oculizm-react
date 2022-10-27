@@ -1,11 +1,14 @@
 //Basic imports 
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import "./edit-post.css";
 
 //services imports
 import { getSinglePost } from '../../services/postsService';
 import ReactLoading from 'react-loading';
+
+//Packages imports
+import { Link, useLocation } from "react-router-dom";
+import { BsChevronLeft } from "react-icons/bs";
 
 
 
@@ -73,14 +76,20 @@ const edit_post = () => {
               </div>
               <div className="row">
                 <div className="col-xxl-12">
-                  <img
-                    src={singlePostsdata.image_url}
-                    className='img-thumbnail'
-                    alt='...'
-                  />
+                  <div className="media-preview" title="Click on the image to start tagging!">
+                    <button className="media-cropper-open-button" data-open-cropper="">&nbsp;</button>
+                    <img className="media-background" src={singlePostsdata.image_url} alt='...' />
+                    <div className="main-image" style={{ display: 'block' }}>
+                      <img className="main-image-actual" src={singlePostsdata.image_url} alt='...' />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <Link to="/posts" className="nav-left">
+              <BsChevronLeft size={16} />
+              Back to all posts</Link>
           </div>
         </div>
       </div>

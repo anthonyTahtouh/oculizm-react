@@ -11,3 +11,70 @@
 .post-meta-item .post-meta-value {
  display: inline-block;
 }
+
+.media-preview {
+ margin: 0 auto;
+ width: 100%;
+ overflow: hidden;
+ box-sizing: border-box;
+ height: 400px;
+ background-color: #eeeeee;
+ position: relative;
+}
+
+
+.media-cropper-open-button {
+ z-index: 1;
+ position: absolute;
+ right: 10px;
+ top: 10px;
+ background: #eaeaea;
+ background-position-x: 0%;
+ background-position-y: 0%;
+ background-repeat: repeat;
+ background-image: none;
+ background-size: auto;
+ background-image: url(../../Assets/Images/crop.png);
+ background-repeat: no-repeat;
+ background-size: 25px;
+ background-position: center center;
+ width: 40px;
+ height: 40px;
+ border: none;
+}
+
+.media-preview .media-background {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: auto;
+ -webkit-filter: blur(10px);
+}
+
+.main-image {
+ margin: 0 auto;
+ height: 100%;
+ width: auto;
+ display: block;
+ position: relative;
+}
+
+.main-image .main-image-actual {
+ display: block;
+ max-width: 600px;
+ max-height: 400px;
+ margin: 0 auto;
+}
+
+.nav-left,
+.nav-left:hover {
+ color: #000000;
+ font-size: 14px;
+ padding: 10px 20px 10px 0;
+ display: inline-block;
+ margin: 10px 0;
+ cursor: pointer;
+ text-decoration: none;
+ line-height: 14px;
+}
