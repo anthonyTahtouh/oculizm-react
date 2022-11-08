@@ -518,6 +518,7 @@ const dashboard = () => {
         setTopPostsdata(result.top_performing_posts.slice(0, 4));
         setTopHashtagdata(result.top_hashtags);
         setOrderDetailsdata(result.orders_with_a_grid_view);
+        console.log("orders_with_a_grid_view : ", result.orders_with_a_grid_view);
       }
     )
     getClientTopProducts().then(
@@ -903,27 +904,43 @@ const dashboard = () => {
                             {
                               expandedRows.includes(order.order_id) ?
                                 <tr>
-                                  <td colspan="6">
-                                    <div style={{ backgroundColor: '#414141;', color: 'black', padding: '10px' }}>
+                                  <td colSpan="6">
+                                    <div style={{ color: 'black', padding: '10px' }}>
                                       <h2> Order Details </h2>
-                                      <ul>
+                                      <ul className="orderDetailsList">
                                         <li>
-                                          <span><b>order:</b></span> {' '}
-                                          <span> {order['order_id']} {' '} {order['created']} </span>
+                                          <span><b>Order ID :</b></span> {' '}
+                                          <span> {order['order_id']} </span>
                                         </li>
                                         <li>
-                                          <span><b>items:</b><br /></span>
+                                          <span><b>Order Date :</b></span> {' '}
+                                          <span> {order['created']} </span>
+                                        </li>
+                                        <li>
+                                          <span><b>Order Items :</b><br /></span>
                                           {order.order_items.map(orderItems => (
-                                            <span><b>({orderItems.quantity})</b> {' '} {orderItems.name} {' '} <b>{orderItems.price} {' '} {order['currency']}</b>  <br /></span>
+                                            <span >
+                                              <img
+                                                src={orderItems.product_img_url}
+                                                className='product-image'
+                                                alt='...'
+                                              />
+                                              <span style={{ lineHeight : '30px' }}><b>({orderItems.quantity})</b> {' '} {orderItems.name} {' '} <b>{orderItems.price} {' '} {order['currency']}</b>  <br /></span>
+                                            </span>
                                           ))}
                                         </li>
                                         <li>
-                                          <span><b>Total:</b></span> {' '}
+                                          <span><b>Order Total :</b></span> {' '}
                                           <span> {order.total_order_amount} {' '} {order['currency']} </span>
                                         </li>
                                         <li>
-                                          <span><b>Date:</b></span> {' '}
-                                          <span> {order['created']} </span>
+                                          <span><b>Events For Session ID : </b></span> {' '}
+                                          <span> {order.session_id} </span>
+                                        </li>
+                                        <li>
+                                          {order.event_types.map(eventTypes => (
+                                              <span>{eventTypes.createdDate} {' '} {eventTypes.createdTime} {' '} {' '} {eventTypes.event_type}<br /></span>
+                                          ))}
                                         </li>
                                       </ul>
                                     </div>
