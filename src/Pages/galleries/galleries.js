@@ -4,25 +4,30 @@ import "./galleries.css";
 
 //Packages imports
 import ReactLoading from 'react-loading';
-// import { Link } from "react-router-dom";
 
 //services imports
 import { getClientGalleries } from '../../services/galleriesService';
 
 const galleries = () => {
+
+  //react hooks to set and populate variables value to use it later in html rendering
   const [galleriesdata, setGalleriesdata] = useState([]);
   const [galleriesNumber, setGalleriesNumber] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+
+    // getting the client galleries from the api using the getClientGalleries function
     getClientGalleries().then(
       (result) => {
         if (result) {
+          // getting post for evey gallery 
           const promises = result.map(async item => {
             const response = await fetch(`https://app.oculizm.com/wp-admin/admin-ajax.php?action=get_oculizm_posts&gallery_id=${item.id}`);
             return await response.json();
           });
 
+          // add these posts to posts array inside the main results array 
           Promise.all(promises).then(posts => {
             const galleryPostsData = posts.map(galleryPosts => galleryPosts.posts);
             let i = 0;
@@ -39,6 +44,7 @@ const galleries = () => {
     )
   }, [])
 
+  // showing a react loader if data not ready yet 
   if (!isLoaded) {
     return (
       <div className="row">

@@ -5,11 +5,13 @@ import "./chart.css";
 //Packages import
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+//using react prpos inside the component function to allow data transfer between child and parent components
 const chart = ({ data, chartName, chartType }) => {
 
   return (
     <div className="chart-section-container">
       <ResponsiveContainer width="100%" height="100%" >
+        {/* drawing charts depending on the chart type and the data coming from the parent component  */}
         {(() => {
           switch (chartType) {
             case 'lineChart':

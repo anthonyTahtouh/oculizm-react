@@ -12,19 +12,22 @@ import { Link } from "react-router-dom";
 import { getClientPosts } from '../../services/postsService';
 
 const posts = () => {
+
+  //set the number of posts per page 
   let PageSize = 96;
+
+  //react hooks to set and populate variables value to use it later in html rendering
   const [postsdata, setPostsdata] = useState([]);
   const [postsNumber, setPostsNumber] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  // const [PageSize, setPageSize] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // getting the client posts from the api using the getClientPosts function
     getClientPosts().then(
       (result) => {
         if (result) {
           setPostsdata(result.posts);
-          // setPageSize(result.limit);
           setPostsNumber("(" + result.total + ")");
           setIsLoaded(true);
         }
@@ -32,12 +35,15 @@ const posts = () => {
       }
     )
   }, [])
+
+  //handeling the pagination
   const currentPostsData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     return postsdata.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, postsdata]);
 
+  // showing a react loader if data not ready yet 
   if (!isLoaded) {
     return (
       <div className="row">

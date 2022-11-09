@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import {Link} from "react-router-dom";
 
 const NavbarMobileView = (props) => {
+  //react hook to set and populate variable value to use it later in html rendering
   const [expandMobileNav, setExpandMobileNav] = useState(false);
   props.onCollapseMobile(expandMobileNav);
 

@@ -13,13 +13,15 @@ import { BsChevronLeft } from "react-icons/bs";
 
 
 const edit_post = () => {
-
+  
+  //uselocation hook to get the post id from the link clicked 
   const location = useLocation();
   const { post_id } = location.state;
   const [singlePostsdata, setSinglePostsdata] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // getting single post data from the api using the getSinglePost function depending on the post_id
     getSinglePost(post_id).then(
       (result) => {
         if (result) {
@@ -31,6 +33,7 @@ const edit_post = () => {
     )
   }, [post_id])
 
+  // showing a react loader if data not ready yet 
   if (!isLoaded) {
     return (
       <div className="row">

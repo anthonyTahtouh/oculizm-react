@@ -5,8 +5,10 @@ import "./SidebarList.css";
 //Packages import
 import {Link} from "react-router-dom";
 
+// using passed props from the parent component
 const SidebarList = ({ expandSidebar }) => {
   return (
+    // building the list items based on the props passed from the parent component
     <React.Fragment>
       {expandSidebar ? (
         <div className="navbar-items">

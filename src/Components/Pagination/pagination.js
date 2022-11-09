@@ -1,7 +1,11 @@
+//Basic imports 
 import React from 'react';
+import './pagination.css';
+
+//Packages import
 import classnames from 'classnames';
 import { usePagination, DOTS } from './usePagination';
-import './pagination.css';
+
 const Pagination = props => {
   const {
     onPageChange,
@@ -32,6 +36,7 @@ const Pagination = props => {
   };
 
   let lastPage = paginationRange[paginationRange.length - 1];
+  // building the paginaton htmml
   return (
     <ul
       className={classnames('pagination-container', { [className]: className })}

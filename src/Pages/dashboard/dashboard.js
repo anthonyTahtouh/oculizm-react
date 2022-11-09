@@ -5,6 +5,7 @@ import "./dashboard.css";
 //Components imports
 import Chart from "../../Components/Charts/chart";
 import ReactCountryFlag from "react-country-flag";
+import OculizmModal from "../../Components/Modal/Modal";
 
 //Packages imports
 import Container from 'react-bootstrap/Container';
@@ -15,7 +16,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //services imports
-import { getAllClientStats, getClientTopProducts } from '../../services/clientService';
+import { getAllClientStats, getClientTopProducts } from '../../services/clientsService';
 
 // viewsChart data 
 const viewsChartdata = [
@@ -505,13 +506,17 @@ const revenueChartdata = [
 
 const dashboard = () => {
 
+  //react hooks to set and populate variables value to use it later in html rendering
   const [topCreatorsdata, setTopCreatorsdata] = useState([]);
   const [topPostsdata, setTopPostsdata] = useState([]);
   const [topHashtagdata, setTopHashtagdata] = useState([]);
   const [topProductsdata, setTopProductsdata] = useState([]);
   const [orderDetailsdata, setOrderDetailsdata] = useState([]);
+  const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
+
+    // getting the client stats results from the api using the getAllClientStats function
     getAllClientStats().then(
       (result) => {
         setTopCreatorsdata(result.top_creators.slice(0, 4));
@@ -521,6 +526,7 @@ const dashboard = () => {
         console.log("orders_with_a_grid_view : ", result.orders_with_a_grid_view);
       }
     )
+    // getting the client top products from the api using the getClientTopProducts function
     getClientTopProducts().then(
       (result) => {
         setTopProductsdata(result.top_performing_products.slice(0, 4));
@@ -563,6 +569,21 @@ const dashboard = () => {
             Dashboard</h1>
         </div>
       </div>
+
+      <div className="row">
+        <div className="col-xxl-12">
+          <Button variant="primary" onClick={() => setModalShow(true)}>
+            Launch vertically centered modal
+          </Button>
+
+          <OculizmModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
+        </div>
+      </div>
+
+
       <div className="row">
         <div className="col-xxl-12">
           <div className="white-content-block">
@@ -925,7 +946,7 @@ const dashboard = () => {
                                                 className='product-image'
                                                 alt='...'
                                               />
-                                              <span style={{ lineHeight : '30px' }}><b>({orderItems.quantity})</b> {' '} {orderItems.name} {' '} <b>{orderItems.price} {' '} {order['currency']}</b>  <br /></span>
+                                              <span style={{ lineHeight: '30px' }}><b>({orderItems.quantity})</b> {' '} {orderItems.name} {' '} <b>{orderItems.price} {' '} {order['currency']}</b>  <br /></span>
                                             </span>
                                           ))}
                                         </li>
@@ -939,7 +960,7 @@ const dashboard = () => {
                                         </li>
                                         <li>
                                           {order.event_types.map(eventTypes => (
-                                              <span>{eventTypes.createdDate} {' '} {eventTypes.createdTime} {' '} {' '} {eventTypes.event_type}<br /></span>
+                                            <span>{eventTypes.createdDate} {' '} {eventTypes.createdTime} {' '} {' '} {eventTypes.event_type}<br /></span>
                                           ))}
                                         </li>
                                       </ul>
