@@ -512,7 +512,8 @@ const dashboard = () => {
   const [topHashtagdata, setTopHashtagdata] = useState([]);
   const [topProductsdata, setTopProductsdata] = useState([]);
   const [orderDetailsdata, setOrderDetailsdata] = useState([]);
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
+  const [clickedorderId, setClickedorderId] = useState('');
 
   useEffect(() => {
 
@@ -523,7 +524,7 @@ const dashboard = () => {
         setTopPostsdata(result.top_performing_posts.slice(0, 4));
         setTopHashtagdata(result.top_hashtags);
         setOrderDetailsdata(result.orders_with_a_grid_view);
-        console.log("orders_with_a_grid_view : ", result.orders_with_a_grid_view);
+        // console.log("orders_with_a_grid_view : ", result.orders_with_a_grid_view);
       }
     )
     // getting the client top products from the api using the getClientTopProducts function
@@ -534,31 +535,14 @@ const dashboard = () => {
     )
   }, [])
 
-  // State variable to keep track of all the expanded rows
-  // By default, nothing expanded. Hence initialized with empty array.
-  const [expandedRows, setExpandedRows] = useState([]);
 
-  // State variable to keep track which row is currently expanded.
-  const [expandState, setExpandState] = useState({});
 
   /**
-   * This function gets called when show/hide link is clicked.
+   * This function gets called when order ID is clicked.
    */
-  const handleEpandRow = (event, orderId) => {
-    const currentExpandedRows = expandedRows;
-    const isRowExpanded = currentExpandedRows.includes(orderId);
-
-    let obj = {};
-    isRowExpanded ? (obj[orderId] = false) : (obj[orderId] = true);
-    setExpandState(obj);
-
-    // If the row is expanded, we are here to hide it. Hence remove
-    // it from the state variable. Otherwise add to it.
-    const newExpandedRows = isRowExpanded ?
-      currentExpandedRows.filter(id => id !== orderId) :
-      currentExpandedRows.concat(orderId);
-
-    setExpandedRows(newExpandedRows);
+  const handleClickedOrder = (event, orderId) => {
+    setClickedorderId(orderId);
+    setModalShow(true);
   }
 
   return (
@@ -569,20 +553,6 @@ const dashboard = () => {
             Dashboard</h1>
         </div>
       </div>
-
-      <div className="row">
-        <div className="col-xxl-12">
-          <Button variant="primary" onClick={() => setModalShow(true)}>
-            Launch vertically centered modal
-          </Button>
-
-          <OculizmModal
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />
-        </div>
-      </div>
-
 
       <div className="row">
         <div className="col-xxl-12">
@@ -886,7 +856,6 @@ const dashboard = () => {
                         <th>Order ID</th>
                         <th>Order Total</th>
                         <th>Items</th>
-                        <th>Details</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -900,7 +869,11 @@ const dashboard = () => {
                               {order['created']}
                             </td>
                             <td>
-                              {order['order_id']}
+                              <Button className="order-id-button"
+                                variant="link"
+                                onClick={event => handleClickedOrder(event, order.order_id)}>
+                                {order['order_id']}
+                              </Button>
                             </td>
                             <td>
                               {order['currency']} {' '} {order['total_order_amount']}
@@ -910,63 +883,15 @@ const dashboard = () => {
                                 <span><b>({orderItems.quantity})</b> {' '} {orderItems.name} {' '} <span style={{ float: 'right' }}><b>{orderItems.price} {' '} {order['currency']}</b></span>  <br /></span>
                               ))}
                             </td>
-                            <td>
-                              <Button
-                                variant="link"
-                                onClick={event => handleEpandRow(event, order.order_id)}>
-                                {
-                                  expandState[order.order_id] ?
-                                    'Hide' : 'Show'
-                                }
-                              </Button>
-                            </td>
                           </tr>
                           <>
                             {
-                              expandedRows.includes(order.order_id) ?
-                                <tr>
-                                  <td colSpan="6">
-                                    <div style={{ color: 'black', padding: '10px' }}>
-                                      <h2> Order Details </h2>
-                                      <ul className="orderDetailsList">
-                                        <li>
-                                          <span><b>Order ID :</b></span> {' '}
-                                          <span> {order['order_id']} </span>
-                                        </li>
-                                        <li>
-                                          <span><b>Order Date :</b></span> {' '}
-                                          <span> {order['created']} </span>
-                                        </li>
-                                        <li>
-                                          <span><b>Order Items :</b><br /></span>
-                                          {order.order_items.map(orderItems => (
-                                            <span >
-                                              <img
-                                                src={orderItems.product_img_url}
-                                                className='product-image'
-                                                alt='...'
-                                              />
-                                              <span style={{ lineHeight: '30px' }}><b>({orderItems.quantity})</b> {' '} {orderItems.name} {' '} <b>{orderItems.price} {' '} {order['currency']}</b>  <br /></span>
-                                            </span>
-                                          ))}
-                                        </li>
-                                        <li>
-                                          <span><b>Order Total :</b></span> {' '}
-                                          <span> {order.total_order_amount} {' '} {order['currency']} </span>
-                                        </li>
-                                        <li>
-                                          <span><b>Events For Session ID : </b></span> {' '}
-                                          <span> {order.session_id} </span>
-                                        </li>
-                                        <li>
-                                          {order.event_types.map(eventTypes => (
-                                            <span>{eventTypes.createdDate} {' '} {eventTypes.createdTime} {' '} {' '} {eventTypes.event_type}<br /></span>
-                                          ))}
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr> : null
+                              order.order_id === clickedorderId ?
+                                <OculizmModal
+                                  show={modalShow}
+                                  onHide={() => setModalShow(false)}
+                                  order={order}
+                                /> : null
                             }
                           </>
                         </>

@@ -198,11 +198,12 @@
   text-decoration: none;
 }
 
-.white-content-block .table-striped>tbody>tr>td button {
+.white-content-block .table-striped>tbody>tr>td button.order-id-button {
   padding-top: 0;
   padding-bottom: 0;
-  font-size: 13px;
   margin-top: -6px;
+  color: black;
+  text-decoration: none;
 }
 
 .product-image {
